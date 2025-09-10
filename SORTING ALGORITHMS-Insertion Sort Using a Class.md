@@ -34,9 +34,48 @@ To develop a Python class with functions to:
 ---
 
 ## 💻 PROGRAM:
+```python
+class InsertionSorter:
+    def __init__(self):
+        self.lst = []
 
-ADD CODE HERE
+    def create_list(self):
+        n = int(input("Enter the number of elements: "))
+        print("Enter the elements:")
+        for _ in range(n):
+            self.lst.append(int(input()))
+    
+    def insertion_sort(self):
+        for i in range(1, len(self.lst)):
+            key = self.lst[i]
+            j = i - 1
+            while j >= 0 and self.lst[j] > key:
+                self.lst[j + 1] = self.lst[j]
+                j -= 1
+            self.lst[j + 1] = key
+
+    def print_list(self):
+        print("Sorted List:", self.lst)
+
+
+# Create object
+sorter = InsertionSorter()
+
+# Call methods
+sorter.create_list()
+sorter.insertion_sort()
+sorter.print_list()
+
 
 ## OUTPUT:
+Enter the number of elements: 5
+Enter the elements:
+34
+12
+45
+2
+9
+Sorted List: [2, 9, 12, 34, 45]
 
 ## RESULT:
+The Python class successfully implements the Insertion Sort algorithm, sorts the user-provided list, and displays the sorted output.
