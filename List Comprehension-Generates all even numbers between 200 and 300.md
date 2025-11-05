@@ -20,30 +20,21 @@ To write a Python class-based program that generates all even numbers between 20
 ---
 
 ## 💻 PROGRAM:
-```python
-class Program:
-    def __init__(self, a, b, c):
-        self.a = a   
-        self.b = b   
-        self.c = c   
-
-    def display(self):
-        
-        even_numbers = [i for i in range(self.a, self.c + 1, self.b) if i % 2 == 0]
-        print("Even numbers between", self.a, "and", self.c, "are:")
-        print(even_numbers)
-
-obj = Program(200, 1, 300)
-obj.display()
-
+```
+L=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    L.append(x) 
+ODD=[x for x in L if x%2!=0]
+EVEN=[x for x in L if x%2==0]
+print(L)
+print(ODD)
+print(EVEN)
+```
 
 ## OUTPUT:
-Even numbers between 200 and 300 are:
-[200, 202, 204, 206, 208, 210, 212, 214, 216, 218, 220, 
- 222, 224, 226, 228, 230, 232, 234, 236, 238, 240, 
- 242, 244, 246, 248, 250, 252, 254, 256, 258, 260, 
- 262, 264, 266, 268, 270, 272, 274, 276, 278, 280, 
- 282, 284, 286, 288, 290, 292, 294, 296, 298, 300]
+![image](https://github.com/user-attachments/assets/459fef8a-443a-4525-8bc2-cc7566c96f6b)
 
 ## RESULT:
 Thus, the Python class-based program using list comprehension successfully generates and prints all even numbers between 200 and 300.
