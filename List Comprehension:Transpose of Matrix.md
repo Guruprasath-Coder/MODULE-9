@@ -18,57 +18,31 @@ To write a Python program to compute the **transpose** of a matrix using **list 
 ---
 
 ## 💻 PROGRAM:
-```python
-# Function to create matrix
-def create(r, c):
-    matrix = []
-    print("Enter the elements row-wise:")
+```
+def read_matrix(r,c):
+    matrix = [[0]*c for row in range(r)]
     for i in range(r):
-        row = []
+        lines = list(map(int, input().split()))
         for j in range(c):
-            val = int(input(f"Enter element [{i}][{j}]: "))
-            row.append(val)
-        matrix.append(row)
+            matrix[i][j] = lines[j]
     return matrix
-
-
-# Main program
-r = int(input("Enter number of rows: "))
-c = int(input("Enter number of columns: "))
-
-matrix = create(r, c)
-
-# Transpose using list comprehension
-transpose = [[matrix[j][i] for j in range(r)] for i in range(c)]
-
-print("\nOriginal Matrix:")
-for row in matrix:
-    print(row)
-
-print("\nTranspose of Matrix:")
-for row in transpose:
-    print(row)
-
+def print_matrix(M):
+    print("Matrix:")
+    for i in range(len(M)):
+        for j in range(len(M[0])):
+            print(M[i][j],end=" ")
+        print()
+def transpose(M):
+    result = [[0]*(len(M)) for rows in range(len(M[0]))]
+    for i in range(len(M)):
+        for j in range(len(M[0])):
+            result[j][i] = M[i][j]
+    return result
+```
 
 ## OUTPUT:
-Enter number of rows: 2
-Enter number of columns: 3
-Enter the elements row-wise:
-Enter element [0][0]: 1
-Enter element [0][1]: 2
-Enter element [0][2]: 3
-Enter element [1][0]: 4
-Enter element [1][1]: 5
-Enter element [1][2]: 6
+![image](https://github.com/user-attachments/assets/234862d9-aaec-4674-9a0d-7438f3e4139f)
 
-Original Matrix:
-[1, 2, 3]
-[4, 5, 6]
-
-Transpose of Matrix:
-[1, 4]
-[2, 5]
-[3, 6]
 
 ## RESULT:
 Thus, the Python program successfully computes the transpose of a matrix using list comprehension.
